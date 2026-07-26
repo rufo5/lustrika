@@ -1,0 +1,38 @@
+[
+    {
+        "barrio":"Centro",
+        "envio":180
+    },
+    {
+        "barrio":"Cordón",
+        "envio":180
+    },
+    {
+        "barrio":"Tres Cruces",
+        "envio":180
+    },
+    {
+        "barrio":"La Blanqueada",
+        "envio":200
+    },
+    {
+        "barrio":"Parque Batlle",
+        "envio":200
+    },
+    {
+        "barrio":"Pocitos",
+        "envio":220
+    },
+    {
+        "barrio":"Buceo",
+        "envio":250
+    },
+    {
+        "barrio":"Malvín",
+        "envio":250
+    },
+    {
+        "barrio":"Carrasco",
+        "envio":320
+    }
+]

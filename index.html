@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lústrika | Insumos que sí limpian</title>
+
+<meta name="description" content="Productos de limpieza para hogares y empresas">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+
+    <div class="logo-box">
+
+        <img src="imagenes/logo-lustrika.png" alt="Lústrika">
+
+    </div>
+
+
+    <div class="empresa">
+
+        <h1>Lústrika</h1>
+
+        <p>
+            Insumos que sí limpian
+        </p>
+
+    </div>
+
+
+    <div class="acciones-header">
+
+        <button id="carrito-btn">
+
+            🛒
+
+            <span id="contador-carrito">
+                0
+            </span>
+
+        </button>
+
+    </div>
+
+
+</header>
+
+
+
+
+<nav class="menu">
+
+<a href="#inicio">Inicio</a>
+
+<a href="#productos">Productos</a>
+
+<a href="#nosotros">Nosotros</a>
+
+<a href="#contacto">Contacto</a>
+
+</nav>
+
+<!-- AVISO ENVÍO GRATIS -->
+
+<div class="aviso-envio">
+
+    🚚 <strong>
+    Envío GRATIS en compras superiores a $1500
+    </strong>
+
+</div>
+
+
+
+
+<section id="inicio" class="hero">
+
+
+<div class="hero-texto">
+
+
+<h2>
+Productos de Limpieza
+Para Tu Hogar y Empresa
+</h2>
+
+
+<p>
+Calidad, rendimiento y precios competitivos.
+</p>
+
+
+<a href="#productos" class="btn-principal">
+Ver productos
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="beneficios">
+
+
+<div class="beneficio">
+
+<h3>
+Calidad
+</h3>
+
+<p>
+Productos seleccionados para una limpieza efectiva.
+</p>
+
+</div>
+
+
+
+<div class="beneficio">
+
+<h3>
+Precios
+</h3>
+
+<p>
+Soluciones económicas para hogares y empresas.
+</p>
+
+</div>
+
+
+
+<div class="beneficio">
+
+<h3>
+Envíos
+</h3>
+
+<p>
+En Montevideo con tarifas por zona.
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="productos" class="catalogo">
+
+
+<h2>
+Nuestros productos
+</h2>
+
+
+
+<div id="catalogo" class="productos-grid">
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ==========================================
+     SECCIÓN SOBRE NOSOTROS (AMPLIADA)
+=========================================== -->
+<section id="nosotros" class="nosotros">
+
+    <h2>Sobre Lústrika</h2>
+    
+    <div class="nosotros-contenido">
+        <p>
+            Nuestra historia nació de una profunda motivación familiar y del deseo de superación. Nos dimos cuenta de lo difícil que era encontrar insumos de limpieza que realmente cumplieran lo que prometen sin descuidar el presupuesto de las familias y los comercios.
+        </p>
+        <p>
+            Lo que comenzó como un sueño impulsado por el esfuerzo de nuestro hogar, hoy se transforma en Lústrika: un proyecto dedicado a ofrecer soluciones eficientes, de alto rendimiento y con precios competitivos para todo Montevideo. Nos mueve la confianza de nuestros clientes y el compromiso de llevar calidad que sí limpia a cada rincón.
+        </p>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<section id="contacto" class="contacto">
+
+
+<h2>
+Contacto
+</h2>
+
+
+<p>
+Realizá tu pedido por WhatsApp.
+</p>
+
+
+<button id="whatsapp-general"
+class="btn-whatsapp">
+
+Contactar
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<div id="modal-carrito" class="modal">
+
+
+<div class="carrito">
+
+
+<button id="cerrar-carrito"
+class="cerrar">
+
+✕
+
+</button>
+
+
+<h2>
+Tu pedido
+</h2>
+
+
+<ul id="lista-carrito">
+
+</ul>
+
+
+
+<h3>
+Datos de entrega
+</h3>
+
+
+<input 
+type="text"
+id="cliente-nombre"
+placeholder="Nombre completo">
+
+
+<input 
+type="tel"
+id="cliente-telefono"
+placeholder="Teléfono">
+
+
+<select id="cliente-localidad">
+
+<option value="">
+Seleccione localidad
+</option>
+
+<option>
+Centro
+</option>
+
+<option>
+Cordón
+</option>
+
+<option>
+Palermo
+</option>
+
+<option>
+Pocitos
+</option>
+
+<option>
+Punta Carretas
+</option>
+
+<option>
+Parque Rodó
+</option>
+
+<option>
+Buceo
+</option>
+
+<option>
+Malvín
+</option>
+
+<option>
+Unión
+</option>
+
+<option>
+Blanqueada
+</option>
+
+<option>
+Tres Cruces
+</option>
+
+<option>
+La Comercial
+</option>
+
+<option>
+Aires Puros
+</option>
+
+<option>
+Brazo Oriental
+</option>
+
+<option>
+Jacinto Vera
+</option>
+
+<option>
+Cerro
+</option>
+
+<option>
+La Teja
+</option>
+
+<option>
+Paso Molino
+</option>
+
+</select>
+
+
+
+<!-- ZONA OPTIMIZADA EN FILAS Y COLUMNAS -->
+<input type="text" id="cliente-direccion" placeholder="Calle y dirección">
+
+<div class="direccion-detalles">
+    <input type="text" id="cliente-puerta" placeholder="N° de puerta">
+    <input type="text" id="cliente-apartamento" placeholder="Apto. (opcional)">
+</div>
+
+<input type="text" id="cliente-referencia" placeholder="Referencia de entrega">
+
+
+
+<p id="mensaje-envio">
+
+</p>
+
+
+
+<p class="total">
+
+Subtotal:
+$
+<span id="subtotal-carrito">
+0
+</span>
+
+</p>
+
+
+
+<p class="total">
+
+Envío:
+$
+<span id="envio-carrito">
+0
+</span>
+
+</p>
+
+
+
+<p class="total">
+
+Total:
+$
+<span id="total-carrito">
+0
+</span>
+
+</p>
+
+
+
+
+<button id="enviar-whatsapp"
+class="btn-whatsapp">
+
+Enviar pedido
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<footer class="footer">
+
+
+<h3>
+Lústrika
+</h3>
+
+
+<p>
+Insumos que sí limpian
+</p>
+
+
+<p>
+© 2026 Lústrika
+</p>
+
+
+<p>
+Todos los derechos reservados
+</p>
+
+
+</footer>
+
+
+
+
+
+<!-- BOTÓN FLOTANTE DE WHATSAPP PREMIUM -->
+<a href="https://wa.me." class="whatsapp-flotante" target="_blank" rel="noopener noreferrer">
+    <span class="whatsapp-icono">💬</span>
+    <span class="whatsapp-texto">Hacé tu pedido</span>
+</a>
+
+
+<!-- Scripts -->
+
+<script src="js/config.js"></script>
+
+<script src="js/utilidades.js"></script>
+
+<script src="js/catalogo.js"></script>
+
+<script src="js/envios.js"></script>
+
+<script src="js/carrito.js"></script>
+
+<script src="js/app.js"></script>

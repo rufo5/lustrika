@@ -1,0 +1,35 @@
+MANUAL LUSTRIKA PRO
+
+1) Los productos se administrarán desde productos.csv
+
+2) Las imágenes permanecerán dentro de la carpeta:
+
+imagenes/
+
+3) Cada producto tendrá:
+
+Código
+
+Nombre
+
+Marca
+
+Formato
+
+Precio
+
+Imagen
+
+Categoría
+
+Stock
+
+Oferta
+
+Destacado
+
+4) No modificar archivos JavaScript
+para cambiar precios.
+
+5) Siempre realizar respaldo antes
+de actualizar.
