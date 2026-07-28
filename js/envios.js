@@ -25,15 +25,28 @@ function calcularEnvio(total, zona){
     }
 
 
-    // Buscar costo de zona
 
-    const costo =
-    CONFIG.envio.zonas[zona];
+    // Normalizar nombre recibido
+
+    const zonaNormalizada =
+    zona.trim().toLowerCase();
 
 
-    if(costo){
 
-        return costo;
+    // Buscar zona ignorando mayúsculas,
+    // minúsculas y espacios
+
+    const encontrada =
+    Object.entries(CONFIG.envio.zonas)
+    .find(([nombre]) =>
+        nombre.trim().toLowerCase() === zonaNormalizada
+    );
+
+
+
+    if(encontrada){
+
+        return encontrada[1];
 
     }
 

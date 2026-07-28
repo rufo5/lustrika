@@ -308,29 +308,30 @@ function actualizarEnvio(){
     if(mensaje){
 
 
-        if(subtotal >= CONFIG.envio.envioGratisDesde){
+if(subtotal >= CONFIG.envio.envioGratisDesde){
 
 
-            mensaje.textContent =
-            "🎉 Tu pedido tiene envío gratis";
+    mensaje.textContent =
+    "🎉 Tu pedido tiene envío GRATIS";
 
 
-        }else if(localidad){
+}else{
 
 
-            mensaje.textContent =
-            "⚠️ Envío calculado según tu localidad";
+    const falta =
+    CONFIG.envio.envioGratisDesde - subtotal;
 
 
-        }else{
+    mensaje.textContent =
+    "🚚 Te faltan $" +
+    falta.toLocaleString("es-UY", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }) +
+    " para obtener envío GRATIS";
 
 
-            mensaje.textContent =
-            "Seleccione una localidad para calcular el envío";
-
-
-        }
-
+}
     }
 
 

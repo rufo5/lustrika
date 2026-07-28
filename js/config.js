@@ -62,6 +62,8 @@ const CONFIG = {
         zonas:{
 
 
+            "Jacinto Vera":150,
+            
             "Centro":150,
 
             "Cordón":150,
@@ -72,6 +74,12 @@ const CONFIG = {
 
             "La Blanqueada":180,
 
+            "Aires Puros":180,
+
+            "La Comercial":180,
+
+            "Brazo Oriental":180,
+            
             "Parque Batlle":180,
 
             "Pocitos":200,
@@ -103,7 +111,8 @@ const CONFIG = {
             "Colón":320,
 
             "Lezica":350
-
+              
+            
 
         }
 

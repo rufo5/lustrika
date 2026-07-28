@@ -4,6 +4,43 @@
 ==========================================*/
 
 
+/*=========================================
+  GENERADOR DE CÓDIGO DE PEDIDO
+=========================================*/
+
+function generarCodigoPedido(){
+
+    const ahora = new Date();
+
+
+    const fecha =
+    String(ahora.getFullYear()).slice(2) +
+    String(ahora.getMonth()+1).padStart(2,"0") +
+    String(ahora.getDate()).padStart(2,"0");
+
+
+    let ultimo =
+    localStorage.getItem("numeroPedido") || 0;
+
+
+    ultimo = Number(ultimo) + 1;
+
+
+    localStorage.setItem(
+        "numeroPedido",
+        ultimo
+    );
+
+
+    return (
+        "LUS-" +
+        fecha +
+        "-" +
+        String(ultimo).padStart(3,"0")
+    );
+
+}
+
 document.addEventListener(
 "DOMContentLoaded",
 ()=>{
@@ -18,31 +55,39 @@ document.addEventListener(
 
 
     // ===============================
-    // ABRIR CARRITO
-    // ===============================
+// ABRIR CARRITO
+// ===============================
 
-    const botonCarrito =
-    document.getElementById("carrito-btn");
-
-
-    const modal =
-    document.getElementById("modal-carrito");
+const botonCarrito =
+document.getElementById("carrito-btn");
 
 
+const modal =
+document.getElementById("modal-carrito");
 
-    if(botonCarrito && modal){
 
 
-        botonCarrito.addEventListener(
-        "click",
-        ()=>{
+if(botonCarrito && modal){
 
-            modal.classList.add("activo");
 
-        });
+    botonCarrito.addEventListener(
+"click",
+()=>{
 
+    modal.classList.add("activo");
+
+
+    if(typeof mostrarCarrito === "function"){
+
+        mostrarCarrito();
 
     }
+
+});
+
+}
+
+
 
 
 
@@ -128,7 +173,13 @@ document.addEventListener(
         enviarPedido.addEventListener(
         "click",
         ()=>{
+if(!carrito || carrito.length === 0){
 
+    alert("El carrito está vacío. Agregue productos antes de enviar el pedido.");
+
+    return;
+
+}
 
             const nombre =
             document.getElementById("cliente-nombre")?.value || "";
@@ -144,115 +195,260 @@ document.addEventListener(
             document.getElementById("cliente-direccion")?.value || "";
 
 
-
-            const puerta =
-            document.getElementById("cliente-puerta")?.value || "";
-
+const puerta =
+document.getElementById("cliente-puerta")?.value || "";
 
 
-            const telefono =
-            document.getElementById("cliente-telefono")?.value || "";
+const telefono =
+document.getElementById("cliente-telefono")?.value.trim() || "";
+
+if(!nombre.trim()){
+
+    alert("Por favor ingrese el nombre del cliente.");
+
+    return;
+
+}
+
+
+if(!telefono || telefono.length < 8){
+
+    alert("Ingrese un teléfono válido.");
+
+    return;
+
+}
+
+
+if(!localidad){
+
+    alert("Seleccione una zona de entrega.");
+
+    return;
+
+}
+
+
+if(!direccion.trim()){
+
+    alert("Ingrese la dirección de entrega.");
+
+    return;
+
+}
+
+
+if(!puerta.trim()){
+
+    alert("Ingrese el número de puerta.");
+
+    return;
+
+}
+
+
+const referencia =
+document.getElementById("cliente-referencia")?.value.trim() || "";
+
+
+if(!referencia){
+
+    alert("Ingrese una referencia de entrega.");
+
+    return;
+
+}
+
+if(telefono.length < 8){
+
+    alert("Ingrese un teléfono válido.");
+
+    return;
+
+}
+
+
+            /*=========================================
+  CÓDIGO DE PEDIDO
+=========================================*/
+
+const ahora = new Date();
+
+const fecha =
+String(ahora.getDate()).padStart(2,"0") + "/" +
+String(ahora.getMonth()+1).padStart(2,"0") + "/" +
+ahora.getFullYear();
+
+
+const hora =
+String(ahora.getHours()).padStart(2,"0") + ":" +
+String(ahora.getMinutes()).padStart(2,"0");
+
+
+const codigoPedido =
+generarCodigoPedido();
+
+let mensaje = "";
+
+mensaje += "*LÚSTRIKA*\n";
+mensaje += "Insumos que sí limpian\n\n";
+
+mensaje += "══════════════════════\n";
+mensaje += "*NUEVO PEDIDO*\n";
+mensaje += "══════════════════════\n\n";
+
+mensaje += "*Pedido:* " + codigoPedido + "\n";
+mensaje += "*Fecha:* " + fecha + "\n";
+mensaje += "*Hora:* " + hora + "\n\n";
+
+mensaje += "*Cliente:* " + nombre + "\n";
+mensaje += "*Teléfono:* " + telefono + "\n\n";
+
+mensaje += "══════════════════════\n";
+mensaje += "*DATOS DE ENTREGA*\n";
+mensaje += "══════════════════════\n";
+mensaje += "Zona: " + localidad + "\n";
+mensaje += "Dirección: " + direccion + " " + puerta + "\n\n";
+
+mensaje += "\n══════════════════════\n";
+mensaje += "*PRODUCTOS*\n";
+mensaje += "══════════════════════\n\n";
+
+if(typeof carrito !== "undefined"){
+
+carrito.forEach(item=>{
+
+    const precio =
+    Number(item.precio);
+
+    const subtotalProducto =
+    precio * item.cantidad;
+
+
+    mensaje +=
+    "- " +
+    item.cantidad +
+    " x " +
+    item.producto +
+    " (" +
+    (item.formato || "") +
+    ")\n";
+
+
+    mensaje +=
+    "  Precio unitario: $ " +
+    precio.toLocaleString("es-UY", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }) +
+    "\n";
+
+
+    mensaje +=
+    "  Subtotal: $ " +
+    subtotalProducto.toLocaleString("es-UY", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }) +
+    "\n\n";
+
+});
+}
+
+
+const subtotal =
+calcularTotal();
+
+
+if(subtotal < CONFIG.envio.envioGratisDesde && !localidad){
+
+    alert("Por favor seleccione una localidad para calcular el envío.");
+
+    return;
+
+}
+
+
+const envio =
+calcularEnvio(subtotal, localidad);
 
 
 
+mensaje += "\n══════════════════════\n";
+mensaje += "*RESUMEN DE COMPRA*\n";
+mensaje += "══════════════════════\n\n";
 
-            let mensaje =
-            "🛒 *Pedido Lústrika*%0A%0A";
-
-
-
-            mensaje +=
-            "Cliente: " +
-            nombre +
-            "%0A";
-
-
-
-            mensaje +=
-            "Teléfono: " +
-            telefono +
-            "%0A";
+mensaje +=
+"Subtotal: $ " +
+subtotal.toLocaleString("es-UY", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+}) +
+"\n";
 
 
-
-            mensaje +=
-            "Localidad: " +
-            localidad +
-            "%0A";
-
-
-
-            mensaje +=
-            "Dirección: " +
-            direccion +
-            " " +
-            puerta +
-            "%0A%0A";
+mensaje +=
+"Envío: $ " +
+envio.toLocaleString("es-UY", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+}) +
+"\n";
 
 
+mensaje +=
+"--------------------\n";
 
 
-            if(typeof carrito !== "undefined"){
+mensaje +=
+"*TOTAL: $ " +
+(subtotal + envio).toLocaleString("es-UY", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+}) +
+"*";
 
 
+mensaje += "\n\n";
+mensaje += "━━━━━━━━━━━━━━━━━━━━\n\n";
 
-                carrito.forEach(item=>{
+mensaje += "*PASOS PARA COMPLETAR TU COMPRA:*\n";
+mensaje += "1. Realiza la transferencia por el monto total.\n";
+mensaje += "2. Envía el comprobante respondiendo a este chat.\n";
+mensaje += "_Nota: El pedido se procesará una vez verificado el pago._\n\n";
+
+mensaje += "\n══════════════════════\n";
+mensaje += "*DATOS PARA LA TRANSFERENCIA*\n";
+mensaje += "══════════════════════\n\n";
+mensaje += "• Banco: Santander\n";
+mensaje += "• Tipo de Cuenta: Caja de Ahorros Pesos dentro de Santander\n";
+mensaje += "• Número de Cuenta: 1202831148\n";
+mensaje += "• Sucursal: 07 Bulevar Artigas\n";
+mensaje += "• Tipo de Cuenta: Caja de Ahorros Pesos desde otros Bancos\n";
+mensaje += "• Número de Cuenta: 00070012028331148\n";
+mensaje += "• Sucursal: 07 Bulevar Artigas\n";
+mensaje += "• Titular: Rufo Hernandez\n\n";
+mensaje += "\n══════════════════════\n";
+mensaje += "*PLAZOS DE ENTREGA (MONTEVIDEO)*\n";
+mensaje += "══════════════════════\n\n";
+mensaje += "• Entrega en un plazo máximo de *3 días hábiles* post pago.\n";
+mensaje += "• Horario de reparto: Mañana (09:00 a 13:00 hs).\n";
+mensaje += "• El transportista solo entrega mercadería (no gestiona cobros).\n\n";
+
+mensaje += "¡Muchas gracias por elegir a *Lústrika*!";
+const url =
+"https://wa.me/" +
+CONFIG.empresa.whatsapp +
+"?text=" +
+encodeURIComponent(mensaje);
 
 
-                    mensaje +=
-                    item.producto +
-                    " x" +
-                    item.cantidad +
-                    "%0A";
-
-
-                });
-
-
-            }
-
-
-
-            const subtotal =
-            calcularTotal();
-
-
-
-            const envio =
-            calcularEnvio(subtotal, localidad);
-
-
-
-            mensaje +=
-            "%0ASubtotal: $" +
-            subtotal.toFixed(2);
-
-
-
-            mensaje +=
-            "%0AEnvío: $" +
-            envio.toFixed(2);
+window.open(url,"_blank");
+            
 
 
 
-            mensaje +=
-            "%0ATotal: $" +
-            (subtotal + envio).toFixed(2);
-
-
-
-
-            const url =
-            "https://wa.me/" +
-            CONFIG.empresa.whatsapp +
-            "?text=" +
-            encodeURIComponent(
-                mensaje
-            );
-
-
-
-            window.open(url,"_blank");
+           
 
 
         });
