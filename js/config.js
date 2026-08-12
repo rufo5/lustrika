@@ -51,7 +51,7 @@ const CONFIG = {
     envio:{
 
 
-        envioGratisDesde:1500,
+        envioGratisDesde:5000,
 
 
         mensajeGratis:

@@ -97,10 +97,26 @@ function convertirCSV(csv){
             marca: producto["marca"],
 
 
-            precio:Number(
-                (producto["precio venta"] || "0")
-                .replace(",", ".")
-            ),
+                        precio: (function() {
+                // 1. Lee el precio feo del Excel y lo convierte a número
+                let valorOriginal = Number(
+                    (producto["precio venta"] || "0")
+                    .replace(",", ".")
+                );
+                
+                // Si el precio es cero o no es un número válido, lo dejamos igual
+                if (!valorOriginal || isNaN(valorOriginal)) return 0;
+
+                // 2. ESTRATEGIA DE MARKETING: Redondea al entero superior
+                let enteroSuperior = Math.ceil(valorOriginal); 
+
+                // 3. Forzamos la terminación en .99 (Ej: 100 - 0.01 = 99.99)
+                let precioMarketing = enteroSuperior - 0.01;
+
+                // Devolvemos el número estético listo para la pantalla
+                return Number(precioMarketing.toFixed(2));
+            })(),
+
 
 
             imagen: producto["imagen"]
