@@ -73,6 +73,8 @@
 
 <a href="#contacto">Contacto</a>
 
+<a href="#faq">Preguntas e Info</a> <!-- NUEVO ENLACE CONECTADO A LAS PREGUNTAS -->
+
 </nav>
 
 <!-- AVISO ENVÍO GRATIS -->
@@ -221,37 +223,60 @@ Nuestros productos
 
 
 <section id="contacto" class="contacto">
-
-
-<h2>
-Contacto
-</h2>
-
-
-<p>
-Realizá tu pedido por WhatsApp.
-</p>
-
-
-<button id="whatsapp-general"
-class="btn-whatsapp">
-
-Contactar
-
-</button>
-
-
+    <h2>Contacto</h2>
+    <p>Realizá tu pedido por WhatsApp.</p>
+    <button id="whatsapp-general" class="btn-whatsapp">Contactar</button>
 </section>
 
+<!-- ========================================================
+     BLOQUE 1: SECCIÓN DE PREGUNTAS FRECUENTES (FAQ)
+========================================================= -->
+<section id="faq" style="padding: 60px 20px; max-width: 800px; margin: 0 auto; font-family: sans-serif;">
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 1.8rem; color: inherit;">
+        Preguntas Frecuentes
+    </h2>
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+        <details style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 15px; cursor: pointer;">
+            <summary style="font-weight: bold; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                <span>🛒 ¿Cómo se realiza el pedido?</span>
+                <span style="font-size: 0.8rem; opacity: 0.7;">▼</span>
+            </summary>
+            <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.95rem; line-height: 1.5; opacity: 0.9; cursor: default;">
+                ¡Es muy fácil! Navegás por nuestro catálogo en la página, agregás los insumos que necesitás al carrito, completás tus datos de entrega en Montevideo y presionás <strong>"Enviar pedido"</strong>. El sistema te redirigirá a nuestro WhatsApp con el resumen listo para que confirmemos el stock y coordinemos el envío.
+            </p>
+        </details>
+        <details style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 15px; cursor: pointer;">
+            <summary style="font-weight: bold; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                <span>📸 ¿Puedo pedir también por Instagram o WhatsApp directo?</span>
+                <span style="font-size: 0.8rem; opacity: 0.7;">▼</span>
+            </summary>
+            <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.95rem; line-height: 1.5; opacity: 0.9; cursor: default;">
+                Sí, por supuesto. Aunque usar el carrito de la página es la forma más rápida para no olvidarte de ningún producto, también tomamos pedidos de forma directa escribiéndonos a nuestro Instagram oficial @lustrika.uy o haciendo clic en el botón flotante de WhatsApp. ¡Te atendemos donde te quede más cómodo!
+            </p>
+        </details>
+        <details style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 15px; cursor: pointer;">
+            <summary style="font-weight: bold; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                <span>💳 ¿Cuáles son los métodos de pago aceptados?</span>
+                <span style="font-size: 0.8rem; opacity: 0.7;">▼</span>
+            </summary>
+            <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.95rem; line-height: 1.5; opacity: 0.9; cursor: default;">
+                Nuestro método principal y más recomendado es la <strong>transferencia bancaria</strong>. De todas formas, si preferís pagar en otra alternativa, podés coordinarlo de mutuo acuerdo con nosotros directamente por el chat de WhatsApp al cerrar el pedido.
+            </p>
+        </details>
+        <details style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 15px; cursor: pointer;">
+            <summary style="font-weight: bold; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                <span>🚚 ¿Cuánto demora en llegar mi pedido?</span>
+                <span style="font-size: 0.8rem; opacity: 0.7;">▼</span>
+            </summary>
+            <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.95rem; line-height: 1.5; opacity: 0.9; cursor: default;">
+                El pedido se procesa y despacha <strong>luego de haber sido comprobado y que el pago esté efectivo</strong>. A partir de esa confirmación, la entrega tiene un plazo estimado de <strong>hasta 3 días máximos la entrega</strong>. El repartidor se comunicará contigo al llegar a la dirección indicada. De igual forma estaremos en contacto haciendo el seguimiento hasta la confirmación de su entrega.
+            </p>
+        </details>
+    </div>
+</section>
+<!-- ======================================================== -->
 
-
-
-
-
-
-
-
-<div id="modal-carrito" class="modal">
+<div id="modal-carrito" class="modal"> <!-- AQUÍ EMPIEZA TU CARRITO ORIGINAL (NO SE TOCA) -->
 
 
 <div class="carrito">
@@ -449,29 +474,42 @@ Enviar pedido
 
 
 
-<footer class="footer">
+<!-- ==========================================
+     BLOQUE 2: FOOTER OPTIMIZADO CON TEXTOS DE CONFIANZA
+=========================================== -->
+<footer class="footer" style="padding: 40px 20px; font-family: sans-serif; border-top: 1px solid #e0e0e0;">
+    <div style="max-width: 800px; margin: 0 auto 30px auto; text-align: left; font-size: 0.9rem; line-height: 1.6; color: inherit;">
+        
+        <!-- Políticas de Envío -->
+        <div style="margin-bottom: 25px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px;">
+            <h4 style="margin: 0 0 8px 0; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
+                🚚 Políticas de Envío (Montevideo)
+            </h4>
+            <p style="margin: 0;">
+                Coordinamos los despachos y envíos <strong>únicamente luego de que el pago haya sido debidamente comprobado y se encuentre efectivo</strong>. A partir de ese momento, la entrega se realiza en un plazo de <strong>hasta 3 días hábiles máximo</strong>. El costo se calcula automáticamente según el barrio en el carrito, y recordá que en compras mayores a <strong>$5.000</strong> el envío es gratis.
+            </p>
+        </div>
 
+        <!-- Términos, Condiciones y Métodos de Pago -->
+        <div style="margin-bottom: 25px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px;">
+            <h4 style="margin: 0 0 8px 0; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
+                🔐 Términos, Condiciones y Métodos de Pago
+            </h4>
+            <p style="margin: 0; margin-bottom: 10px;">
+                Lústrika funciona como un catálogo digital interactivo para tu comodidad. <strong>No realizamos cobros automáticos ni solicitamos datos de tarjetas en esta web</strong>. 
+            </p>
+            <p style="margin: 0;">
+                💵 <strong>Formas de Pago:</strong> El método principal es mediante <strong>transferencia bancaria</strong> (el pedido se libera una vez acreditado). No obstante, podés coordinar cualquier otra alternativa que te quede cómoda directamente de mutuo acuerdo a través de nuestro WhatsApp oficial al momento de confirmar el stock.
+            </p>
+        </div>
+    </div>
 
-<h3>
-Lústrika
-</h3>
-
-
-<p>
-Insumos que sí limpian
-</p>
-
-
-<p>
-© 2026 Lústrika
-</p>
-
-
-<p>
-Todos los derechos reservados
-</p>
-
-
+    <!-- Identidad de tu marca original (Mantiene tus clases CSS intactas) -->
+    <h3>Lústrika</h3>
+    <p>Insumos que sí limpian</p>
+    <p>© 2026 Lústrika</p>
+    <p>Todos los derechos reservados</p>
+    <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 5px;">Montevideo, Uruguay</p>
 </footer>
 
 
