@@ -413,10 +413,10 @@ mensaje += "\n\n";
 mensaje += "━━━━━━━━━━━━━━━━━━━━\n\n";
 
 mensaje += "*PASOS PARA COMPLETAR TU COMPRA:*\n";
-mensaje += "1. Realiza la transferencia por el monto total.\n";
-mensaje += "2. Envía el comprobante respondiendo a este chat.\n";
-mensaje += "_Nota: El pedido se procesará una vez verificado el pago._\n\n";
-
+mensaje += "1. Enviaremos tu pedido para confirmar stock.\n";
+mensaje += "2. Una vez confirmado, realiza la transferencia por el monto total.\n";
+mensaje += "3. Envía el comprobante por este medio.\n";
+mensaje += "_Nota: El pedido se procesará y coordinará una vez verificado el pago._\n\n";
 mensaje += "\n══════════════════════\n";
 mensaje += "*DATOS PARA LA TRANSFERENCIA*\n";
 mensaje += "══════════════════════\n\n";

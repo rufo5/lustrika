@@ -277,7 +277,7 @@ Nuestros productos
 </section>
 <!-- ======================================================== -->
 
-<div id="modal-carrito" class="modal"> <!-- AQUÍ EMPIEZA TU CARRITO ORIGINAL (NO SE TOCA) -->
+<div id="modal-carrito" class="modal">
 
 
 <div class="carrito">
@@ -455,7 +455,6 @@ $
 
 
 
-
 <button id="enviar-whatsapp"
 class="btn-whatsapp">
 
@@ -473,39 +472,64 @@ Enviar pedido
 
 
 
-
-
 <!-- ==========================================
-     BLOQUE 2: FOOTER OPTIMIZADO CON TEXTOS DE CONFIANZA
+     BLOQUE 2: FOOTER OPTIMIZADO CON BLOQUES DESPLEGABLES
 =========================================== -->
 <footer class="footer" style="padding: 40px 20px; font-family: sans-serif; border-top: 1px solid #e0e0e0;">
-    <div style="max-width: 800px; margin: 0 auto 30px auto; text-align: left; font-size: 0.9rem; line-height: 1.6; color: inherit;">
+    <div style="max-width: 800px; margin: 0 auto 30px auto; display: flex; flex-direction: column; gap: 15px; text-align: left;">
         
-        <!-- Políticas de Envío -->
-        <div style="margin-bottom: 25px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px;">
-            <h4 style="margin: 0 0 8px 0; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
-                🚚 Políticas de Envío (Montevideo)
-            </h4>
-            <p style="margin: 0;">
+        <!-- Desplegable 1: Políticas de Envío -->
+        <details style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 15px; cursor: pointer;">
+            <summary style="font-weight: bold; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: inherit;">
+                <span>🚚 Políticas de Envío (Montevideo)</span>
+                <span style="font-size: 0.8rem; opacity: 0.7;">▼</span>
+            </summary>
+            <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.95rem; line-height: 1.5; opacity: 0.9; cursor: default;">
                 Coordinamos los despachos y envíos <strong>únicamente luego de que el pago haya sido debidamente comprobado y se encuentre efectivo</strong>. A partir de ese momento, la entrega se realiza en un plazo de <strong>hasta 3 días hábiles máximo</strong>. El costo se calcula automáticamente según el barrio en el carrito, y recordá que en compras mayores a <strong>$5.000</strong> el envío es gratis.
             </p>
-        </div>
+        </details>
 
-        <!-- Términos, Condiciones y Métodos de Pago -->
-        <div style="margin-bottom: 25px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px;">
-            <h4 style="margin: 0 0 8px 0; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
-                🔐 Términos, Condiciones y Métodos de Pago
-            </h4>
-            <p style="margin: 0; margin-bottom: 10px;">
-                Lústrika funciona como un catálogo digital interactivo para tu comodidad. <strong>No realizamos cobros automáticos ni solicitamos datos de tarjetas en esta web</strong>. 
+        <!-- Desplegable 2: Términos, Condiciones y Métodos de Pago -->
+        <details style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 15px; cursor: pointer;">
+            <summary style="font-weight: bold; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: inherit;">
+                <span>🔐 Términos, Condiciones y Métodos de Pago</span>
+                <span style="font-size: 0.8rem; opacity: 0.7;">▼</span>
+            </summary>
+            <div style="margin-top: 10px; font-size: 0.95rem; line-height: 1.5; opacity: 0.9; cursor: default;">
+                <p style="margin: 0 0 10px 0;">
+                    Lústrika funciona como un catálogo digital interactivo para tu comodidad. <strong>No realizamos cobros automáticos ni solicitamos datos de tarjetas en esta web</strong>.
+                </p>
+                <p style="margin: 0;">
+                    💵 <strong>Formas de Pago:</strong> El método principal es mediante <strong>transferencia bancaria</strong> (el pedido se libera una vez acreditado). No obstante, podés coordinar cualquier otra alternativa que te quede cómoda directamente de mutuo acuerdo a través de nuestro WhatsApp oficial al momento de confirmar el stock.
+                </p>
+            </div>
+        </details>
+
+        <!-- Desplegable 3: Garantía de Conformidad -->
+        <details style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 15px; cursor: pointer;">
+            <summary style="font-weight: bold; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: inherit;">
+                <span>🛡️ Garantía de Conformidad</span>
+                <span style="font-size: 0.8rem; opacity: 0.7;">▼</span>
+            </summary>
+            <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.95rem; line-height: 1.5; opacity: 0.9; cursor: default;">
+                Recordá que en compras mayores a $5.000 el envío es gratis. Ante cualquier eventualidad, disconformidad o si algún insumo presenta un defecto de fábrica, nos escribís directo al WhatsApp oficial y coordinamos el cambio correspondiente de forma inmediata.
             </p>
-            <p style="margin: 0;">
-                💵 <strong>Formas de Pago:</strong> El método principal es mediante <strong>transferencia bancaria</strong> (el pedido se libera una vez acreditado). No obstante, podés coordinar cualquier otra alternativa que te quede cómoda directamente de mutuo acuerdo a través de nuestro WhatsApp oficial al momento de confirmar el stock.
+        </details>
+
+        <!-- Desplegable 4: Tu Seguridad es lo Primero -->
+        <details style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 15px; cursor: pointer;">
+            <summary style="font-weight: bold; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: inherit;">
+                <span>🔒 Tu Seguridad es lo Primero</span>
+                <span style="font-size: 0.8rem; opacity: 0.7;">▼</span>
+            </summary>
+            <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.95rem; line-height: 1.5; opacity: 0.9; cursor: default;">
+                No solicitamos datos de tarjetas ni realizamos cobros automáticos en esta web. En cumplimiento con la Ley Nº 17.250, disponés de un plazo de 5 días hábiles desde la entrega para desistir de la compra (el producto debe devolverse sin uso, cerrado y en su empaque original). Tus datos se usan exclusivamente para coordinar el despacho seguro.
             </p>
-        </div>
+        </details>
+
     </div>
 
-    <!-- Identidad de tu marca original (Mantiene tus clases CSS intactas) -->
+    <!-- Identidad de tu marca -->
     <h3>Lústrika</h3>
     <p>Insumos que sí limpian</p>
     <p>© 2026 Lústrika</p>

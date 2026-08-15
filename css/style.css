@@ -35,12 +35,12 @@ body {
 }
 
 .logo-box img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 100px;            /* Ancho y alto exactamente iguales para un círculo perfecto */
+    height: 100px;
+    border-radius: 50%;     /* Hace la imagen completamente redonda */
+    object-fit: cover;      /* Evita que el logo se estire, aplaste o distorsione */
+    display: block;
 }
-
 .empresa {
     text-align: center;
     flex: 1;
@@ -326,6 +326,7 @@ body {
     display: none;
     justify-content: flex-end;
     z-index: 2000;
+    pointer-events: none; /* Permite que los clics atraviesen el fondo hacia la tienda */
 }
 
 .modal.activo {
@@ -338,7 +339,8 @@ body {
     height: 100%;
     padding: 25px;
     overflow: auto;
-} Bro
+    pointer-events: auto; /* La caja del carrito sí recibe los clics */
+}
 
 .cerrar {
     float: right;
@@ -353,7 +355,6 @@ body {
     padding: 10px;
     border-bottom: 1px solid #ddd;
 }
-
 .btn-whatsapp {
     background: #25D366;
     color: white;
@@ -540,38 +541,39 @@ button:active,
 ========================================== */
 
 /* Fondo del panel lateral */
+/* Fondo del panel lateral */
 .carrito {
     background: #ffffff;
     width: 400px; /* Un poquito más ancho para dar comodidad en PC */
     height: 100%;
-    padding: 30px 24px;
+    padding: 12px 24px 24px 24px; /* Cambiado de 30px a 12px en la parte superior */
     overflow-y: auto;
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15); /* Sombra lateral elegante */
     display: flex;
     flex-direction: column;
-}
-
-/* Título principal del carrito */
+}/* Título principal del carrito */
 .carrito h2 {
     color: #0057b8;
-    font-size: 1.8rem;
+    font-size: 1.4rem;             /* Reducido ligeramente para ganar espacio */
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-top: 0 !important;       /* Elimina el desperdicio de espacio arriba */
+    margin-bottom: 10px !important;  /* Reduce la separación con la lista de productos */
     border-bottom: 2px solid #f4f7fb;
-    padding-bottom: 10px;
+    padding-bottom: 6px !important;  /* Ajusta la línea separadora */
 }
 
 /* Lista de productos agregados */
 #lista-carrito {
     padding: 0;
-    margin-bottom: 25px;
-    max-height: 200px; /* Limita la altura si llevan muchos insumos */
-    overflow-y: auto;
+    margin-bottom: 5px !important; /* Reducido de 20px a 5px para juntar más */
+    min-height: 200px !important;
+    max-height: 380px !important;
+    overflow-y: auto !important;
 }
 
 #lista-carrito li {
     list-style: none;
-    padding: 12px 5px;
+    padding: 8px 5px; /* Reducido un poco el padding de los ítems para ganar espacio */
     border-bottom: 1px solid #f1f3f5;
     font-size: 0.95rem;
     color: #444;
@@ -583,11 +585,10 @@ button:active,
 /* Subtítulos de secciones del formulario */
 .carrito h3 {
     color: #222;
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Ligeramente más pequeño para no desperdiciar tanto aire */
     font-weight: 600;
-    margin: 15px 0 12px 0;
+    margin: 5px 0 8px 0 !important; /* Reducido drásticamente el espacio arriba y abajo */
 }
-
 /* ESTILIZADO DE CAMPOS DE TEXTO E INPUTS (NIVEL APPLE/MERCADO LIBRE) */
 .carrito input[type="text"],
 .carrito input[type="tel"],
@@ -743,8 +744,11 @@ button:active,
     margin-bottom: 10px !important; /* Despeja el espacio justo para el botón */
 }
 
-/* 5. Compactado del botón final */
-#enviar-whatsapp {
-    padding: 10px !important;       /* Botón más compacto y estilizado */
-    font-size: 0.95rem !important;
+/* =========================================
+   MODO SEGURO: MINIMIZAR CARRITO
+========================================= */
+.carrito {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
+
