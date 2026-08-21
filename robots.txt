@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lustrika.vercel.app/
+Sitemap: https://lustrika.uy/sitemap.xml
