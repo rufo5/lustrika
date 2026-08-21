@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lustrika.uy
+Sitemap: https://www.lustrika.uy
