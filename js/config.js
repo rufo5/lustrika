@@ -68,7 +68,7 @@ const CONFIG = {
 
             "Cordón":250,
 
-            "Palermo":150,
+            "Palermo":250,
 
             "Tres Cruces":250,
 
