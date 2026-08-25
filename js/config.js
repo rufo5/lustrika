@@ -62,51 +62,51 @@ const CONFIG = {
         zonas:{
 
 
-            "Jacinto Vera":150,
+            "Jacinto Vera":250,
             
-            "Centro":150,
+            "Centro":250,
 
-            "Cordón":150,
+            "Cordón":250,
 
             "Palermo":150,
 
-            "Tres Cruces":150,
+            "Tres Cruces":250,
 
-            "La Blanqueada":180,
+            "La Blanqueada":200,
 
-            "Aires Puros":180,
+            "Aires Puros":250,
 
-            "La Comercial":180,
+            "La Comercial":200,
 
-            "Brazo Oriental":180,
+            "Brazo Oriental":250,
             
-            "Parque Batlle":180,
+            "Parque Batlle":250,
 
-            "Pocitos":200,
+            "Pocitos":300,
 
-            "Punta Carretas":220,
+            "Punta Carretas":300,
 
-            "Parque Rodó":200,
+            "Parque Rodó":300,
 
-            "Buceo":220,
+            "Buceo":280,
 
-            "Malvín":250,
+            "Malvín":280,
 
             "Unión":220,
 
-            "Aguada":180,
+            "Aguada":200,
 
-            "Belvedere":250,
+            "Belvedere":300,
 
-            "Villa Española":220,
+            "Villa Española":280,
 
-            "Cerro":280,
+            "Cerro":320,
 
-            "La Teja":220,
+            "La Teja":300,
 
-            "Paso Molino":220,
+            "Paso Molino":280,
 
-            "Sayago":260,
+            "Sayago":250,
 
             "Colón":320,
 
