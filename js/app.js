@@ -432,7 +432,7 @@ mensaje += "\n══════════════════════
 mensaje += "*PLAZOS DE ENTREGA (MONTEVIDEO)*\n";
 mensaje += "══════════════════════\n\n";
 mensaje += "• Entrega en un plazo máximo de *3 días hábiles* post pago.\n";
-mensaje += "• Horario de reparto: Mañana (09:00 a 13:00 hs).\n";
+mensaje += "• Horario de reparto: A convenir por Whatsapp.\n";
 mensaje += "• El transportista solo entrega mercadería (no gestiona cobros).\n\n";
 
 mensaje += "¡Muchas gracias por elegir a *Lústrika*!";
